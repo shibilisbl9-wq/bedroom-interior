@@ -84,7 +84,9 @@
   const M = {
     wall: std({ color: 0xe6e1d9, roughness: 0.95 }),
     cap: std({ color: 0xf7f5f1, roughness: 1 }),
-    oak: std({ map: oakTex, roughness: 0.62 }),
+    oak: std({ map: walnutTex, roughness: 0.55 }),      // v3: every wood surface is walnut
+    lacquer: std({ color: 0xcdc3b7, roughness: 0.5 }),   // warm taupe matt lacquer (reference)
+    panel: std({ color: 0xbfb4a7, roughness: 0.7 }),
     walnut: std({ map: walnutTex, roughness: 0.55 }),
     flute: std({ color: 0x4e3322, roughness: 0.5 }),
     black: std({ color: 0x1d1d1c, roughness: 0.4, metalness: 0.5 }),
@@ -203,27 +205,18 @@
   box(A, 90, 208, 4, M.walnut, 240, 0, -T / 2 - 2);
   [258, 285, 312].forEach((x) => box(A, 0.8, 190, 0.6, M.black, x, 9, -T / 2 + 2, true));
   box(A, 2, 24, 3, M.black, 318, 95, -T / 2 + 2);
-  // wardrobe carcass 195 w x 213 h x 60 d
-  box(A, 195, 8, 50, M.black, 0, 0, 4);
-  box(A, 2, 205, 60, M.oak, 0, 8, 0); box(A, 2, 205, 60, M.oak, 193, 8, 0);
-  box(A, 195, 2, 60, M.oak, 0, 211, 0); box(A, 195, 2, 58, M.oak, 0, 8, 0);
-  box(A, 191, 203, 1, M.white, 2, 10, 0.5);
-  box(A, 1.8, 201, 57, M.oak, 64.5, 10, 1); box(A, 1.8, 201, 57, M.oak, 129.5, 10, 1);
-  // glass bay interior: drawers, rail, hanging clothes, top shelf
-  box(A, 63, 22, 55, M.walnut, 66.3, 10, 2); box(A, 63, 22, 55, M.walnut, 66.3, 33, 2);
-  box(A, 63, 2, 56, M.oak, 66.3, 180, 1);
-  cyl(A, 0.8, 63, M.black, 98, 172, 30).rotation.z = Math.PI / 2;
-  for (let i = 0; i < 9; i++) box(A, 2.6, 60 + (i % 3) * 18, 44, M.cloth[i % 6], 70 + i * 6.6, 172 - 60 - (i % 3) * 18, 8);
-  [[70, 182, 0], [92, 182, 2], [112, 182, 4]].forEach(([x, y, c]) => { box(A, 17, 8, 34, M.cloth[c], x, y, 12); box(A, 16, 7, 33, M.cloth[(c + 1) % 6], x, y + 8, 12); });
-  box(A, 0.8, 196, 0.8, M.led, 67.5, 12, 56, true); box(A, 0.8, 196, 0.8, M.led, 128.5, 12, 56, true);
-  warm(A, 98, 150, 40, 0.35, 120);
-  // sliding shutters: oak / bronze glass / oak
-  box(A, 66, 202, 2, M.oak, 1, 10, 58); box(A, 66, 202, 2, M.oak, 128, 10, 58);
-  box(A, 1.6, 150, 1.6, M.black, 62, 40, 60); box(A, 1.6, 150, 1.6, M.black, 131, 40, 60);
-  const gs = new THREE.Mesh(new THREE.PlaneGeometry(64, 199), M.glass); gs.position.set(97.5, 110.5, 61); A.add(gs);
-  box(A, 67, 2.5, 2.5, M.black, 64, 10, 60); box(A, 67, 2.5, 2.5, M.black, 64, 209.5, 60);
-  box(A, 2.5, 202, 2.5, M.black, 64, 10, 60); box(A, 2.5, 202, 2.5, M.black, 128.5, 10, 60);
-  box(A, 195, 1.2, 3, M.black, 0, 211.5, 58, true);
+  // wardrobe carcass 195 w x 213 h x 60 d: walnut surround, four hinged taupe shutters (reference photo)
+  box(A, 195, 8, 57, M.walnut, 0, 0, 0);
+  box(A, 2, 213, 62, M.walnut, 0, 0, 0); box(A, 2, 213, 62, M.walnut, 193, 0, 0); box(A, 195, 2, 62, M.walnut, 0, 211, 0);
+  box(A, 191, 203, 1, M.white, 2, 8, 0.5);
+  const DW = (191 - 3 * 0.3) / 4;
+  for (let i = 0; i < 4; i++) box(A, DW, 202, 2, M.lacquer, 2 + i * (DW + 0.3), 8.5, 58);
+  // fluted walnut band across the four shutters, 100-124 cm
+  box(A, 191, 24, 0.6, M.walnut, 2, 100, 60);
+  const fluteGeo = new THREE.CylinderGeometry(0.55, 0.55, 24, 6);
+  for (let x = 2.8; x < 192.6; x += 1.6) { const m = new THREE.Mesh(fluteGeo, M.walnut); m.position.set(x, 112, 60.6); A.add(m); }
+  // long black bar handles on shutters 1 and 3, at the meeting edge
+  [1, 3].forEach((k) => box(A, 1.2, 110, 3.5, M.black, 2 + k * (DW + 0.3) - 4.5, 55, 60));
   // rounded open end shelves 33 x 60
   const sh = new THREE.Shape();
   sh.moveTo(0, 0); sh.lineTo(33, 0); sh.lineTo(33, 27); sh.absarc(0, 27, 33, 0, Math.PI / 2, false); sh.lineTo(0, 0);
@@ -240,10 +233,11 @@
   box(A, W, 77, 56, M.oak, 0, 213, 0);
   const loftN = 6, lw = W / loftN;
   for (let i = 0; i < loftN; i++) {
-    box(A, lw - 0.8, 74, 2, M.oak, i * lw + 0.4, 215, 56);
+    box(A, lw - 0.8, 74, 2, M.lacquer, i * lw + 0.4, 215, 56);
     box(A, lw - 0.8, 1.4, 0.6, M.black, i * lw + 0.4, 215, 58, true);
   }
   box(A, W, 0.8, 1.6, M.led, 0, 212.2, 54, true);
+  box(A, W, 10, 56, M.walnut, 0, 290, 0);   // filler up to the false ceiling
   warm(A, 110, 200, 80, 0.3, 190); warm(A, 280, 200, 80, 0.3, 190);
 
   /* ---------- WALL B (AC window wall): local x = D - worldZ ---------- */
@@ -251,29 +245,32 @@
   sheer(B, 141, 171, 4, 228); sheer(B, 255, 280, 4, 228);
   box(B, 143, 1.5, 3, M.black, 139, 229, 2);
   box(B, 80, 29, 22, M.ac, 173, 236, 0); box(B, 72, 1.2, 1, M.black, 177, 240, 22, true);
-  flutes(B, 74, 140, 0, 228);
-  box(B, 64, 3.5, 42, M.oak, 75, 74, 0); box(B, 64, 12, 38, M.walnut, 75, 62, 0);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(31, 0.9, 8, 64), M.led); ring.position.set(107, 152, 3); B.add(ring);
-  const mir = new THREE.Mesh(new THREE.CylinderGeometry(30, 30, 1.5, 64), M.mirror); mir.rotation.x = Math.PI / 2; mir.position.set(107, 152, 4); B.add(mir);
-  warm(B, 107, 150, 25, 0.25, 110);
-  box(B, 14, 3, 10, M.cloth[1], 82, 77.5, 14);
-  // grooming tray in place of the vase
-  box(B, 20, 1.5, 14, M.walnut, 118, 77.5, 10); cyl(B, 2.2, 11, M.black, 123, 79, 15); cyl(B, 1.8, 8, M.glass, 128, 79, 18); cyl(B, 2.6, 1.2, M.oak, 133, 79, 14);
+  // free-standing full-length mirror on castors (room coordinates; drops away with wall B)
+  const mg = new THREE.Group(); mg.position.set(30, 0, 236); mg.rotation.y = -0.52; setFor('B', [1, 0]).add(mg);
+  box(mg, 3, 174, 56, M.walnut, -1.5, 12, -28); box(mg, 0.4, 169, 51, M.mirror, 1.5, 14.5, -25.5, true);
+  [-25, 25].forEach((z) => { box(mg, 40, 4, 4, M.walnut, -20, 5, z - 2); box(mg, 2, 31, 3, M.walnut, -2, 9, z - 1.5);
+    [-17, 17].forEach((x) => { const c = new THREE.Mesh(new THREE.SphereGeometry(2.5, 12, 8), M.black); c.position.set(x, 2.5, z); mg.add(c); }); });
 
   /* ---------- WALL C (bed bay): centre face local x = W - worldX; facets measured from their outer end ---------- */
   windowUnit(C, W / 2 - 50, W / 2 + 50, 95, 210, 2);
   sheer(C, W / 2 - 64, W / 2 - 38, 0, 228); sheer(C, W / 2 + 38, W / 2 + 64, 0, 228);
-  flutes(FL, 3, FAC - 3, 0, 228); flutes(FR, 3, FAC - 3, 0, 228);
+  // plain taupe panels with shadow gaps (the balcony-side wall is partly covered by the build-out)
+  const panels = (g, a, b, n) => { const w = (b - a - (n - 1) * 0.5) / n; for (let i = 0; i < n; i++) box(g, w, 228, 1.8, M.panel, a + i * (w + 0.5), 0, 0); };
+  panels(FL, 0, FAC, 3); panels(FR, 32.9 * Math.SQRT2, FAC, 2);
   // the existing 285 cm concrete slab spans the bay: a trapezoid ledge, 143.7 at the back, 285 at the front, 70.6 deep
   const LD = (285 - CW) / 2;
   const ls = new THREE.Shape([new THREE.Vector2(FD - LD, LD), new THREE.Vector2(FD, 0), new THREE.Vector2(W - FD, 0), new THREE.Vector2(W - FD + LD, LD)]);
-  const ledge = new THREE.Mesh(new THREE.ExtrudeGeometry(ls, { depth: 4, bevelEnabled: false }), M.oak);
-  ledge.rotation.x = Math.PI / 2; ledge.position.y = 232; ledge.castShadow = true; ledge.receiveShadow = true; C.add(ledge);
+  // loft cabinets on the shelf, 228 cm up to the false ceiling, six lift-up shutters on the 285 cm front
+  const bl = new THREE.Mesh(new THREE.ExtrudeGeometry(ls, { depth: 72, bevelEnabled: false }), M.walnut);
+  bl.rotation.x = Math.PI / 2; bl.position.y = 300; bl.castShadow = true; bl.receiveShadow = true; C.add(bl);
+  const bw = (285 - 5 * 0.8) / 6;
+  for (let i = 0; i < 6; i++) box(C, bw, 68, 2, M.lacquer, FD - LD + i * (bw + 0.8), 230, LD);
+  box(C, 285, 1.4, 0.6, M.black, FD - LD, 231, LD + 2, true);
   box(C, 283, 0.8, 1.5, M.led, FD - LD + 1, 227.3, LD - 2, true);
   warm(C, W / 2, 222, 16, 0.25, 220);
-  // one floating nightstand, on the AC-side facet, slid 16 cm toward the desk
+  // one floating nightstand, on the AC-side facet
   [[FL, 62, 102]].forEach(([fg, a, b]) => {
-    box(fg, b - a, 16, 28, M.walnut, a, 38, 3.5); box(fg, b - a, 2, 28, M.oak, a, 54, 3.5);
+    box(fg, b - a, 16, 28, M.lacquer, a, 38, 3.5); box(fg, b - a, 2, 28, M.walnut, a, 54, 3.5);
     const cx = (a + b) / 2;
     cyl(fg, 5.5, 3, M.black, cx, 56, 17.5); cyl(fg, 1, 18, M.black, cx, 59, 17.5);
     const shade = new THREE.Mesh(new THREE.SphereGeometry(9, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), M.led);
@@ -377,16 +374,17 @@
   /* ---------- callouts ---------- */
   const tag = document.getElementById('tags');
   const CALLS = [
-    ['Sliding wardrobe &middot; 195 &times; 213 cm', 'A', [30, 170, 60], 'l'],
-    ['Bronze-glass display shutter', 'A', [97, 60, 61], 'd'],
+    ['4-door wardrobe &middot; 195 &times; 213 cm', 'A', [30, 170, 60], 'l'],
+    ['Fluted walnut band', 'A', [97, 112, 61], 'd'],
     ['Loft cabinets &middot; full 347 cm', 'A', [300, 262, 58], ''],
     ['Rounded open shelves', 'A', [222, 120, 40], ''],
-    ['Floating desk + LED mirror', 'B', [2, 118, 236], 'l'],
+    ['Standing mirror on castors', 'B', [30, 120, 236], 'l'],
     ['Half-octagon bay &middot; 3 &times; 144 cm', 'C', [52, 170, 323], ''],
+    ['Loft cabinets over the bay', 'C', [W / 2, 265, 302], ''],
     ['Upholstered bed &middot; 5 &times; 6&frac12; ft', null, [173, 60, 255], ''],
     ['Sheer curtains on ceiling track', 'D', [W - 9 - 32.9, 180, 98], ''],
     ['Window seat &middot; 147.5 cm', 'D', [W - 26, 55, 178], ''],
-    ['Oak-look flooring', null, [300, 0, 150], 'd']
+    ['Light oak-look flooring', null, [300, 0, 150], 'd']
   ].map(([t, wall, p, side]) => {
     const el = document.createElement('div');
     el.className = 'tag' + (side ? ' t' + side : '');
