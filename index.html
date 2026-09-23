@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Bedroom Interior</title>
 <style>
 @font-face{font-family:"Satoshi"; src:url("fonts/Satoshi-Regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap}
@@ -7,7 +8,7 @@
 :root{
   --ground:#ECEEE9; --surface:#F7F8F4; --stage:#E2E5DE; --ink:#1A201C; --muted:#5B665F; --line:#C7CEC5;
   --accent:#2E4A3F; --accent-ink:#F3F6F2; --oak:#B98A58; --oak-soft:#E6D3B8; --walnut:#5B3D29; --glass:#8C7660;
-  --warn:#9A5B16; --warn-bg:#F6E8D3;
+  --warn:#9A5B16; --warn-bg:#F6E8D3; --lacq:#D5CBBF; --panel:#C4B8AA;
   --display:"Satoshi", "Avenir Next", "Segoe UI", sans-serif;
   --body:"Satoshi", "Helvetica Neue", Arial, sans-serif;
   --mono:"Satoshi", "Helvetica Neue", Arial, sans-serif;
@@ -16,13 +17,13 @@
   :root:not([data-theme="light"]){
     --ground:#101412; --surface:#171C19; --stage:#1B211D; --ink:#E3E8E2; --muted:#98A49C; --line:#2E3832;
     --accent:#94BCA9; --accent-ink:#0F1512; --oak:#D2A774; --oak-soft:#4A3A28; --walnut:#A57B5B; --glass:#B39C84;
-    --warn:#E3A55C; --warn-bg:#2E2418;
+    --warn:#E3A55C; --warn-bg:#2E2418; --lacq:#5E554C; --panel:#51483F;
   }
 }
 :root[data-theme="dark"]{
   --ground:#101412; --surface:#171C19; --stage:#1B211D; --ink:#E3E8E2; --muted:#98A49C; --line:#2E3832;
   --accent:#94BCA9; --accent-ink:#0F1512; --oak:#D2A774; --oak-soft:#4A3A28; --walnut:#A57B5B; --glass:#B39C84;
-  --warn:#E3A55C; --warn-bg:#2E2418;
+  --warn:#E3A55C; --warn-bg:#2E2418; --lacq:#5E554C; --panel:#51483F;
 }
 *{box-sizing:border-box}
 body{background:var(--ground); color:var(--ink); font:400 15px/1.6 var(--body); -webkit-font-smoothing:antialiased}
@@ -96,7 +97,7 @@ section{padding:64px 0 8px}
 .d-thin{fill:none; stroke:var(--ink); stroke-width:.7}
 .d-dash{fill:none; stroke:var(--muted); stroke-width:1; stroke-dasharray:5 4}
 .d-oak{fill:var(--oak-soft); stroke:var(--ink); stroke-width:1}
-.d-walnut{fill:var(--walnut)} .d-glass{fill:var(--glass); fill-opacity:.35; stroke:var(--ink); stroke-width:1}
+.d-walnut{fill:var(--walnut)} .d-lacq{fill:var(--lacq); stroke:var(--ink); stroke-width:.8} .d-panel{fill:var(--panel); stroke:var(--ink); stroke-width:.5} .d-glass{fill:var(--glass); fill-opacity:.35; stroke:var(--ink); stroke-width:1}
 .d-soft{fill:var(--ground); stroke:var(--ink); stroke-width:1}
 .d-win{fill:var(--surface); stroke:var(--ink); stroke-width:.8}
 .d-accent{fill:none; stroke:var(--accent); stroke-width:1.3}
@@ -124,7 +125,10 @@ section{padding:64px 0 8px}
 .c-oak{background:repeating-linear-gradient(92deg,#d3b288 0 3px,#c9a579 3px 5px,#d8b98f 5px 9px,#c29e71 9px 10px)}
 .c-walnut{background:repeating-linear-gradient(90deg,#4a3021 0 3px,#6a4630 3px 6px,#3a2518 6px 7px)}
 .c-glass{background:linear-gradient(135deg,#7a6550,#a08a70 55%,#6b5846); box-shadow:inset 0 0 0 5px #1d1d1c}
-.c-paint{background:#E6E1D9}
+.c-paint{background:#EEEAE4}
+.c-lacq{background:#D5CBBF}
+.c-panel{background:#C4B8AA}
+.c-black{background:linear-gradient(90deg,#1d1d1c 0 40%,#3a3a38 40% 44%,#1d1d1c 44%)}
 .c-floor{background:repeating-linear-gradient(0deg,#d8c7ad 0 22px,#9c8468 22px 23px),#d8c7ad}
 .c-fabric{background:radial-gradient(circle at 30% 30%,#9a8f82,#7d7266)}
 
@@ -141,7 +145,7 @@ section{padding:64px 0 8px}
 .opt-grid{display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:24px; align-items:start}
 .opt-hero{margin:0; background:var(--stage); aspect-ratio:3/2; overflow:hidden}
 .opt-hero img{display:block; width:100%; height:100%; object-fit:contain}
-.opt-thumbs{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; margin-top:8px}
+.opt-thumbs{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:8px; margin-top:8px}
 .opt-thumbs button{padding:0; border:1px solid var(--line); background:var(--stage); cursor:pointer; aspect-ratio:1; overflow:hidden; display:grid}
 .opt-thumbs button img{width:100%; height:100%; object-fit:cover; display:block}
 .opt-thumbs button[aria-pressed="true"]{outline:2px solid var(--accent); outline-offset:1px}
@@ -167,13 +171,13 @@ section{padding:64px 0 8px}
     <div>
       <div class="eyebrow">Interior concept · upper-floor bedroom</div>
       <h1>Bay Bedroom <em>Redesign</em></h1>
-      <p class="lede">A calm, modern room built around one idea: the whole entrance wall becomes storage, with a full-height wardrobe and loft cabinets replacing the loose wardrobe and open concrete loft. The bed sits in the half-octagon window bay under a tall, faceted ceiling. The layout is fixed; below are two finishes to choose from.</p>
+      <p class="lede">A calm, modern room built around one idea: the whole entrance wall becomes storage, with a four-door wardrobe and loft cabinets replacing the loose wardrobe and open concrete loft. The bed sits in the half-octagon window bay, under loft cabinets on the old concrete shelf and a flat false ceiling with a recessed LED line. One palette throughout: warm taupe lacquer, walnut and black.</p>
     </div>
     <div class="tblock" aria-label="Project summary">
       <div>Room</div><div><b class="mono">347 × 372 cm</b> · half-octagon bay at the bed</div>
-      <div>Ceiling</div><div class="mono">hipped · 300 at walls → ≈435 peak</div>
+      <div>Ceiling</div><div class="mono">false ceiling at 300 · LED profile</div>
       <div>Area</div><div class="mono">128 sq ft (11.9 m²)</div>
-      <div>Storage wall</div><div class="mono">347 cm long · floor to 290 cm</div>
+      <div>Storage</div><div class="mono">4-door wardrobe · lofts on two walls</div>
       <div>Units</div><div>Centimetres</div>
       <div>Status</div><div>Concept · verify on site</div>
     </div>
@@ -190,12 +194,12 @@ section{padding:64px 0 8px}
       <div class="hint">Drag to orbit · scroll to zoom · walls nearest you drop away</div>
     </div>
   </div>
-  <div class="caption"><span>Isometric cutaway, to scale, shown in the Oak &amp; Walnut finish. Walls facing the camera are hidden so you can see in.</span><span class="mono">1 unit = 1 cm</span></div>
+  <div class="caption"><span>Isometric cutaway, to scale. Walls facing the camera are hidden so you can see in.</span><span class="mono">1 unit = 1 cm</span></div>
 
   <section aria-labelledby="h-opt" id="options">
     <div class="sec-head">
-      <h2 id="h-opt">Two finishes</h2>
-      <p>Same room, same storage wall, two material stories, rendered with real wood, stone and fabric textures and cloth-draped bedding. Six views each, including the tall faceted ceiling over the bay and the balcony window seat.</p>
+      <h2 id="h-opt">The renders</h2>
+      <p>First the room as you would see it from the door. Then two cutaways from above with the near walls taken away, and four straight views, each looking at one wall with only the wall behind the camera removed, ceiling, fan and LED line in place.</p>
     </div>
     <div class="opt-tabs" role="tablist" aria-label="Design options"></div>
     <div class="opt-grid">
@@ -217,41 +221,32 @@ section{padding:64px 0 8px}
   <section aria-labelledby="h-wall">
     <div class="sec-head">
       <h2 id="h-wall">The storage wall</h2>
-      <p>The entrance wall is the only one with no window, and it backs onto the hall, not an outside wall, so it stays dry. The wardrobe runs from the corner to the door, and loft cabinets carry on across the full 347 cm, over the door too.</p>
+      <p>The entrance wall is the only one with no window, and it backs onto the hall, not an outside wall, so it stays dry. The wardrobe runs from the corner to the door: four hinged taupe shutters in a walnut surround, crossed by a fluted walnut band, with long black bar handles. Loft cabinets carry on across the full 347 cm, over the door too.</p>
     </div>
     <div class="split">
       <figure class="sheet" style="margin:0">
         <div class="sheet-bar"><span><b>A-02</b> Elevation · wall A, seen from the bed</span><span>1:50 approx · cm</span></div>
         <div class="drawing">
-          <svg viewBox="0 0 800 700" role="img" aria-label="Elevation of the storage wall: sliding wardrobe 195 cm wide and 213 cm tall, rounded open shelves 33 cm, existing door, and loft cabinets 77 cm tall across the full 347 cm wall.">
+          <svg viewBox="0 0 800 700" role="img" aria-label="Elevation of the storage wall: four-door hinged wardrobe 195 cm wide and 213 cm tall, rounded open shelves 33 cm, existing door, and loft cabinets 77 cm tall across the full 347 cm wall.">
             <rect x="60" y="30" width="694" height="600" class="d-soft"/>
-            <text x="748" y="46" text-anchor="end" class="d-t">ceiling slopes up from here</text>
+            <text x="748" y="46" text-anchor="end" class="d-t">false ceiling 300</text>
             <!-- loft -->
             <g>
-              <rect x="60" y="50" width="115.67" height="154" class="d-oak"/><rect x="175.67" y="50" width="115.67" height="154" class="d-oak"/>
-              <rect x="291.33" y="50" width="115.67" height="154" class="d-oak"/><rect x="407" y="50" width="115.67" height="154" class="d-oak"/>
-              <rect x="522.67" y="50" width="115.67" height="154" class="d-oak"/><rect x="638.33" y="50" width="115.67" height="154" class="d-oak"/>
+              <rect x="60" y="50" width="115.67" height="154" class="d-lacq"/><rect x="175.67" y="50" width="115.67" height="154" class="d-lacq"/>
+              <rect x="291.33" y="50" width="115.67" height="154" class="d-lacq"/><rect x="407" y="50" width="115.67" height="154" class="d-lacq"/>
+              <rect x="522.67" y="50" width="115.67" height="154" class="d-lacq"/><rect x="638.33" y="50" width="115.67" height="154" class="d-lacq"/>
               <path d="M60 199H754" class="d-line"/>
               <text x="407" y="132" text-anchor="middle" class="d-lab">LOFT · 6 LIFT-UP SHUTTERS</text>
             </g>
-            <!-- wardrobe -->
-            <rect x="64" y="614" width="382" height="16" class="d-walnut"/>
-            <rect x="62" y="208" width="132" height="402" class="d-oak"/>
-            <rect x="316" y="208" width="132" height="402" class="d-oak"/>
-            <path d="M184 250V550M324 250V550" class="d-line" style="stroke-width:3"/>
-            <rect x="188" y="208" width="134" height="402" class="d-glass"/>
-            <path d="M192 270H318M192 286H318" class="d-thin"/>
-            <g class="d-walnut" style="opacity:.55">
-              <rect x="197" y="288" width="5" height="130"/><rect x="210" y="288" width="5" height="150"/><rect x="223" y="288" width="5" height="120"/>
-              <rect x="236" y="288" width="5" height="156"/><rect x="249" y="288" width="5" height="128"/><rect x="262" y="288" width="5" height="146"/>
-              <rect x="275" y="288" width="5" height="124"/><rect x="288" y="288" width="5" height="140"/><rect x="301" y="288" width="5" height="132"/>
-              <rect x="198" y="252" width="30" height="16"/><rect x="240" y="252" width="30" height="16"/><rect x="282" y="252" width="30" height="16"/>
-            </g>
-            <rect x="192" y="522" width="126" height="42" class="d-soft"/><rect x="192" y="566" width="126" height="42" class="d-soft"/>
-            <path d="M240 543H270M240 587H270" class="d-line" style="stroke-width:2.5"/>
-            <text x="128" y="236" text-anchor="middle" class="d-t">OAK · SLIDE</text>
-            <text x="255" y="236" text-anchor="middle" class="d-tb">BRONZE GLASS</text>
-            <text x="382" y="236" text-anchor="middle" class="d-t">OAK · SLIDE</text>
+            <!-- wardrobe: four hinged taupe shutters, walnut surround, fluted walnut band, black bar handles -->
+            <rect x="60" y="204" width="390" height="426" class="d-walnut"/>
+            <rect x="64.0" y="209" width="95.5" height="404" class="d-lacq"/><rect x="160.1" y="209" width="95.5" height="404" class="d-lacq"/><rect x="256.2" y="209" width="95.5" height="404" class="d-lacq"/><rect x="352.3" y="209" width="95.5" height="404" class="d-lacq"/>
+            <rect x="64" y="382" width="382" height="48" class="d-walnut"/>
+            <path d="M65.0 382V430M68.2 382V430M71.4 382V430M74.6 382V430M77.8 382V430M81.0 382V430M84.2 382V430M87.4 382V430M90.6 382V430M93.8 382V430M97.0 382V430M100.2 382V430M103.4 382V430M106.6 382V430M109.8 382V430M113.0 382V430M116.2 382V430M119.4 382V430M122.6 382V430M125.8 382V430M129.0 382V430M132.2 382V430M135.4 382V430M138.6 382V430M141.8 382V430M145.0 382V430M148.2 382V430M151.4 382V430M154.6 382V430M157.8 382V430M161.0 382V430M164.2 382V430M167.4 382V430M170.6 382V430M173.8 382V430M177.0 382V430M180.2 382V430M183.4 382V430M186.6 382V430M189.8 382V430M193.0 382V430M196.2 382V430M199.4 382V430M202.6 382V430M205.8 382V430M209.0 382V430M212.2 382V430M215.4 382V430M218.6 382V430M221.8 382V430M225.0 382V430M228.2 382V430M231.4 382V430M234.6 382V430M237.8 382V430M241.0 382V430M244.2 382V430M247.4 382V430M250.6 382V430M253.8 382V430M257.0 382V430M260.2 382V430M263.4 382V430M266.6 382V430M269.8 382V430M273.0 382V430M276.2 382V430M279.4 382V430M282.6 382V430M285.8 382V430M289.0 382V430M292.2 382V430M295.4 382V430M298.6 382V430M301.8 382V430M305.0 382V430M308.2 382V430M311.4 382V430M314.6 382V430M317.8 382V430M321.0 382V430M324.2 382V430M327.4 382V430M330.6 382V430M333.8 382V430M337.0 382V430M340.2 382V430M343.4 382V430M346.6 382V430M349.8 382V430M353.0 382V430M356.2 382V430M359.4 382V430M362.6 382V430M365.8 382V430M369.0 382V430M372.2 382V430M375.4 382V430M378.6 382V430M381.8 382V430M385.0 382V430M388.2 382V430M391.4 382V430M394.6 382V430M397.8 382V430M401.0 382V430M404.2 382V430M407.4 382V430M410.6 382V430M413.8 382V430M417.0 382V430M420.2 382V430M423.4 382V430M426.6 382V430M429.8 382V430M433.0 382V430M436.2 382V430M439.4 382V430M442.6 382V430" class="d-flutes"/>
+            <rect x="151.1" y="300" width="2.6" height="220" class="d-wallfill"/><rect x="343.3" y="300" width="2.6" height="220" class="d-wallfill"/>
+            <text x="112" y="250" text-anchor="middle" class="d-t">HINGED</text>
+            <text x="304" y="250" text-anchor="middle" class="d-t">HINGED</text>
+            <text x="255" y="372" text-anchor="middle" class="d-tb">FLUTED WALNUT BAND</text>
             <!-- rounded open shelves -->
             <rect x="450" y="204" width="66" height="410" class="d-walnut"/>
             <g class="d-oak"><rect x="450" y="608" width="66" height="4"/><rect x="450" y="520" width="66" height="4"/><rect x="450" y="432" width="66" height="4"/><rect x="450" y="344" width="66" height="4"/><rect x="450" y="256" width="66" height="4"/></g>
@@ -286,11 +281,11 @@ section{padding:64px 0 8px}
           <div><strong class="mono" style="color:var(--muted)">≈1.0 m³</strong><span>the current wardrobe</span></div>
         </div>
         <dl class="spec">
-          <div><dt>Sliding wardrobe<small>Three 66 cm shutters on a soft-close two-track system, so nothing swings into the path at the foot of the bed.</small></dt><dd>195 × 213 × 60</dd></div>
-          <div><dt>Bronze glass centre shutter<small>Black aluminium frame, warm LED inside. Short hanging above two drawers.</small></dt><dd>67 wide</dd></div>
-          <div><dt>Inside the side bays<small>Left: long hanging (sarees, dresses). Right: shelves 35 cm apart for folded clothes and bags.</small></dt><dd>hang · shelves</dd></div>
+          <div><dt>Four-door wardrobe<small>Four 48 cm hinged shutters in warm taupe matt lacquer, soft-close hinges, set in a walnut surround.</small></dt><dd>195 × 213 × 60</dd></div>
+          <div><dt>Fluted walnut band<small>A 24 cm strip of fluted walnut across all four shutters, at hand height. Long black bar handles on shutters 1 and 3.</small></dt><dd>100–124 high</dd></div>
+          <div><dt>Inside<small>Left pair: long hanging (sarees, dresses). Right pair: short hanging above two drawers, and shelves 35 cm apart.</small></dt><dd>hang · shelves</dd></div>
           <div><dt>Rounded open shelves<small>Five shelves with a curved front, so there's no sharp corner in the doorway.</small></dt><dd>33 × 60</dd></div>
-          <div><dt>Loft cabinets<small>Six lift-up oak shutters clad the existing concrete loft, including the stretch over the door.</small></dt><dd>347 × 77 × 56</dd></div>
+          <div><dt>Loft cabinets<small>Six lift-up taupe shutters in a walnut carcass clad the existing concrete loft, including the stretch over the door.</small></dt><dd>347 × 77 × 56</dd></div>
           <div><dt>LED cove under the loft<small>Warm 2700 K strip along the loft edge, a soft night light for the walkway.</small></dt><dd>347 run</dd></div>
         </dl>
       </div>
@@ -300,17 +295,18 @@ section{padding:64px 0 8px}
   <section aria-labelledby="h-walls">
     <div class="sec-head">
       <h2 id="h-walls">The other walls</h2>
-      <p>The bay, the desk wall and the balcony window seat, drawn flat like the storage wall. The bay's three walls are unfolded side by side so each one can be taped straight off the drawing.</p>
+      <p>The bay, the mirror wall and the balcony window seat, drawn flat like the storage wall. The bay's three walls are unfolded side by side so each one can be taped straight off the drawing.</p>
     </div>
       <figure class="sheet" style="margin:0 0 0 24px">
         <div class="sheet-bar"><span><b>A-03</b> Elevation · the bay, three walls unfolded, seen from the foot of the bed</span><span>1:50 approx · cm</span></div>
         <div class="drawing">
-          <svg viewBox="0 0 962.4 700" role="img" aria-label="Unfolded elevation of the bay: three 143.7 cm walls. Fluted walnut on both angled walls up to the oak ledge at 228 to 232 cm, the window wall with a 100 by 115 cm window and sheers, the upholstered headboard and bed in front, one floating nightstand with a dome lamp on the AC-side wall, and the balcony wall build-out covering the first 46 cm of the balcony-side wall.">
+          <svg viewBox="0 0 962.4 700" role="img" aria-label="Unfolded elevation of the bay: three 143.7 cm walls with plain taupe panels up to 228 cm, loft cabinets on the concrete shelf from 228 to 300 cm, the window wall with a 100 by 115 cm window and sheers, the upholstered headboard and bed in front, and one floating nightstand with a dome lamp on the AC-side wall.">
             <rect x="60" y="30" width="862.4" height="600" class="d-soft"/>
-            <rect x="153.1" y="174" width="188.4" height="456" class="d-walnut"/>
-            <path d="M161.1V174V630M169.1V174V630M177.1V174V630M185.1V174V630M193.1V174V630M201.1V174V630M209.1V174V630M217.1V174V630M225.1V174V630M233.1V174V630M241.1V174V630M249.1V174V630M257.1V174V630M265.1V174V630M273.1V174V630M281.1V174V630M289.1V174V630M297.1V174V630M305.1V174V630M313.1V174V630M321.1V174V630M329.1V174V630M337.1V174V630" class="d-flutes"/>
-            <rect x="640.9" y="174" width="275.5" height="456" class="d-walnut"/>
-            <path d="M648.9V174V630M656.9V174V630M664.9V174V630M672.9V174V630M680.9V174V630M688.9V174V630M696.9V174V630M704.9V174V630M712.9V174V630M720.9V174V630M728.9V174V630M736.9V174V630M744.9V174V630M752.9V174V630M760.9V174V630M768.9V174V630M776.9V174V630M784.9V174V630M792.9V174V630M800.9V174V630M808.9V174V630M816.9V174V630M824.9V174V630M832.9V174V630M840.9V174V630M848.9V174V630M856.9V174V630M864.9V174V630M872.9V174V630M880.9V174V630M888.9V174V630M896.9V174V630M904.9V174V630M912.9V174V630" class="d-flutes"/>
+            <rect x="153.1" y="174" width="96.7" height="456" class="d-panel"/>
+            <rect x="250.8" y="174" width="96.7" height="456" class="d-panel"/>
+            <rect x="634.9" y="174" width="95.2" height="456" class="d-panel"/>
+            <rect x="731.1" y="174" width="95.2" height="456" class="d-panel"/>
+            <rect x="827.2" y="174" width="95.2" height="456" class="d-panel"/>
             <rect x="60" y="30" width="93.1" height="600" class="d-ground"/>
             <text transform="translate(110.5 330) rotate(-90)" text-anchor="middle" class="d-t">BALCONY WALL BUILD-OUT</text>
             <rect x="391.2" y="210" width="200" height="230" class="d-win"/>
@@ -321,7 +317,13 @@ section{padding:64px 0 8px}
             <rect x="567.2" y="174" width="52" height="456" class="d-sheer"/>
             <path d="M577.2 630V174M589.2 630V174M601.2 630V174M613.2 630V174" class="d-thin" style="opacity:.35"/>
             <rect x="351.2" y="176" width="280" height="3" class="d-wallfill"/>
-            <rect x="147.7" y="166" width="687" height="8" class="d-oak"/>
+            <rect x="147.7" y="30" width="687" height="144" class="d-walnut"/>
+            <rect x="147.7" y="34" width="113.2" height="136" class="d-lacq"/>
+            <rect x="262.5" y="34" width="113.2" height="136" class="d-lacq"/>
+            <rect x="377.2" y="34" width="113.2" height="136" class="d-lacq"/>
+            <rect x="492" y="34" width="113.2" height="136" class="d-lacq"/>
+            <rect x="606.8" y="34" width="113.2" height="136" class="d-lacq"/>
+            <rect x="721.5" y="34" width="113.2" height="136" class="d-lacq"/>
             <path d="M151.7 175.4H830.7" class="d-accent" style="stroke-width:2"/>
             <rect x="325.2" y="394" width="332" height="236" class="d-fabric"/>
             <path d="M339.2 606V398M369.4 606V398M399.6 606V398M429.8 606V398M460 606V398M490.2 606V398M520.4 606V398M550.6 606V398M580.8 606V398M611 606V398M641.2 606V398" class="d-thin" style="opacity:.5"/>
@@ -331,18 +333,18 @@ section{padding:64px 0 8px}
             <ellipse cx="415.2" cy="506" rx="68" ry="18" class="d-soft"/>
             <ellipse cx="567.2" cy="506" rx="68" ry="18" class="d-soft"/>
             <ellipse cx="491.2" cy="510" rx="40" ry="14" class="d-cushion"/>
-            <rect x="758.9" y="522" width="80" height="32" class="d-oak"/>
-            <rect x="758.9" y="518" width="80" height="4" class="d-oak"/>
+            <rect x="758.9" y="522" width="80" height="32" class="d-lacq"/>
+            <rect x="758.9" y="518" width="80" height="4" class="d-walnut"/>
             <rect x="796.9" y="476" width="4" height="42" class="d-wallfill"/>
             <path d="M780.9 476A18 18 0 0 1 816.9 476Z" class="d-lamp"/>
             <path d="M347.5 30V630" class="d-dash"/>
             <path d="M634.9 30V630" class="d-dash"/>
-            <text x="250.3" y="106" text-anchor="middle" class="d-t">BALCONY-SIDE FACET</text>
-            <text x="491.2" y="106" text-anchor="middle" class="d-t">WINDOW WALL</text>
-            <text x="778.7" y="106" text-anchor="middle" class="d-t">AC-SIDE FACET</text>
-            <text x="916.4" y="46" text-anchor="end" class="d-t">ceiling rises to ≈435 at the peak</text>
-            <text x="798.9" y="582" text-anchor="middle" class="d-tl">NIGHTSTAND</text>
-            <text x="491.2" y="150" text-anchor="middle" class="d-t">oak ledge 285 · LED under</text>
+            <text x="250.3" y="198" text-anchor="middle" class="d-t">BALCONY-SIDE FACET</text>
+            <text x="491.2" y="198" text-anchor="middle" class="d-t">WINDOW WALL</text>
+            <text x="778.7" y="230" text-anchor="middle" class="d-t">AC-SIDE FACET</text>
+            <text x="916.4" y="198" text-anchor="end" class="d-t">false ceiling 300 above</text>
+            <text x="798.9" y="582" text-anchor="middle" class="d-t">NIGHTSTAND</text>
+            <text x="491.2" y="106" text-anchor="middle" class="d-t">LOFT CABINETS ON THE CONCRETE SHELF</text>
             <path d="M30 630H952.4" class="d-line" style="stroke-width:2"/>
             <path d="M60 662H922.4M56 666l8-8M60 652V672M343.5 666l8-8M347.5 652V672M630.9 666l8-8M634.9 652V672M918.4 666l8-8M922.4 652V672" class="d-thin"/>
             <text x="203.7" y="656" text-anchor="middle" class="d-tb">143.7</text>
@@ -359,22 +361,16 @@ section{padding:64px 0 8px}
       </figure>
     <div class="pair">
       <figure class="sheet" style="margin:0">
-        <div class="sheet-bar"><span><b>A-04</b> Elevation · desk wall, AC window</span><span>1:50 approx · cm</span></div>
+        <div class="sheet-bar"><span><b>A-04</b> Elevation · mirror wall, AC window</span><span>1:50 approx · cm</span></div>
         <div class="drawing">
-          <svg viewBox="0 0 641.7 700" role="img" aria-label="Elevation of the AC window wall: fluted walnut panel 66 cm wide behind the floating desk and round LED mirror, the 100 by 120 cm window with sheers and the AC unit above, and the side of the wardrobe and loft at the right.">
+          <svg viewBox="0 0 641.7 700" role="img" aria-label="Elevation of the AC window wall: a free-standing full-length mirror on castors, 56 cm wide, the 100 by 120 cm window with sheers and the AC unit above, and the side of the wardrobe and loft at the right.">
             <rect x="60" y="30" width="541.7" height="600" class="d-soft"/>
-            <text x="595.7" y="46" text-anchor="end" class="d-t">ceiling slopes up from here</text>
-            <rect x="63.7" y="174" width="132" height="456" class="d-walnut"/>
-            <path d="M71.7V174V630M79.7V174V630M87.7V174V630M95.7V174V630M103.7V174V630M111.7V174V630M119.7V174V630M127.7V174V630M135.7V174V630M143.7V174V630M151.7V174V630M159.7V174V630M167.7V174V630M175.7V174V630M183.7V174V630M191.7V174V630" class="d-flutes"/>
-            <circle cx="129.7" cy="326" r="62" class="d-ring"/>
-            <circle cx="129.7" cy="326" r="58" class="d-glass"/>
-            <rect x="65.7" y="475" width="128" height="7" class="d-oak"/>
-            <rect x="65.7" y="482" width="128" height="24" class="d-walnut"/>
-            <rect x="147.7" y="472" width="42" height="3" class="d-walnut"/>
-            <rect x="155.7" y="450" width="6" height="22" class="d-soft"/>
-            <rect x="167.7" y="458" width="6" height="14" class="d-soft"/>
-            <rect x="177.7" y="468" width="8" height="4" class="d-soft"/>
-            <rect x="91.7" y="546" width="76" height="84" class="d-soft" rx="8"/>
+            <text x="595.7" y="46" text-anchor="end" class="d-t">false ceiling 300</text>
+            <rect x="73.7" y="258" width="112" height="348" class="d-walnut"/>
+            <rect x="79.7" y="264" width="100" height="336" class="d-glass"/>
+            <rect x="65.7" y="612" width="128" height="8" class="d-walnut"/>
+            <circle cx="75.7" cy="625" r="5" class="d-wallfill"/>
+            <circle cx="183.7" cy="625" r="5" class="d-wallfill"/>
             <rect x="241.7" y="210" width="200" height="240" class="d-win"/>
             <path d="M341.7 450V210" class="d-line" style="stroke-width:2.2"/>
             <path d="M263.7 442V218M285.7 442V218M307.7 442V218M329.7 442V218M351.7 442V218M373.7 442V218M395.7 442V218M417.7 442V218M249.7 424H433.7M249.7 398H433.7M249.7 372H433.7M249.7 346H433.7M249.7 320H433.7M249.7 294H433.7M249.7 268H433.7M249.7 242H433.7" class="d-thin" style="opacity:.55"/>
@@ -390,12 +386,10 @@ section{padding:64px 0 8px}
             <text transform="translate(541.7 410) rotate(-90)" text-anchor="middle" class="d-lab">WARDROBE</text>
             <text x="545.7" y="127" text-anchor="middle" class="d-t">LOFT</text>
             <text x="341.7" y="130" text-anchor="middle" class="d-t">AC</text>
-            <text x="129.7" y="230" text-anchor="middle" class="d-tl">LED MIRROR</text>
-            <text x="129.7" y="590" text-anchor="middle" class="d-t">pouffe</text>
-            <text x="129.7" y="430" text-anchor="middle" class="d-tl">DESK</text>
+            <text transform="translate(129.7 430) rotate(-90)" text-anchor="middle" class="d-t">STANDING MIRROR</text>
             <path d="M30 630H631.7" class="d-line" style="stroke-width:2"/>
-            <path d="M60 662H601.7M56 666l8-8M60 652V672M59.7 666l8-8M63.7 652V672M191.7 666l8-8M195.7 652V672M237.7 666l8-8M241.7 652V672M437.7 666l8-8M441.7 652V672M477.7 666l8-8M481.7 652V672M597.7 666l8-8M601.7 652V672" class="d-thin"/>
-            <text x="129.7" y="656" text-anchor="middle" class="d-tb">66</text>
+            <path d="M60 662H601.7M56 666l8-8M60 652V672M69.7 666l8-8M73.7 652V672M181.7 666l8-8M185.7 652V672M237.7 666l8-8M241.7 652V672M437.7 666l8-8M441.7 652V672M477.7 666l8-8M481.7 652V672M597.7 666l8-8M601.7 652V672" class="d-thin"/>
+            <text x="129.7" y="656" text-anchor="middle" class="d-tb">56 mirror</text>
             <text x="341.7" y="656" text-anchor="middle" class="d-tb">100 window</text>
             <text x="541.7" y="656" text-anchor="middle" class="d-tb">60</text>
             <text x="330.8" y="690" text-anchor="middle" class="d-ta">271 bay corner to wardrobe corner</text>
@@ -411,7 +405,7 @@ section{padding:64px 0 8px}
         <div class="drawing">
           <svg viewBox="0 0 707.5 700" role="img" aria-label="Elevation of the balcony wall: a 33 cm deep build-out with a rounded end by the wardrobe, and a window seat 147.5 cm long and 45 cm high under the three-shutter window, with a cushion and three back cushions, sheers and a linear sconce above. A laundry basket stands in the 69 cm nook by the wardrobe.">
             <rect x="60" y="30" width="607.5" height="600" class="d-soft"/>
-            <text x="72" y="46" text-anchor="start" class="d-t">ceiling slopes up from here</text>
+            <text x="72" y="46" text-anchor="start" class="d-t">false ceiling 300</text>
             <rect x="60" y="30" width="137.2" height="600" class="d-ground"/>
             <rect x="60" y="50" width="112" height="154" class="d-oak"/>
             <text x="116" y="127" text-anchor="middle" class="d-t">LOFT</text>
@@ -424,7 +418,7 @@ section{padding:64px 0 8px}
             <path d="M368.3 480V210" class="d-line" style="stroke-width:2.2"/>
             <path d="M466.7 480V210" class="d-line" style="stroke-width:2.2"/>
             <path d="M292 472V218M314 472V218M336 472V218M358 472V218M380 472V218M402 472V218M424 472V218M446 472V218M468 472V218M490 472V218M512 472V218M534 472V218M278 454H557M278 428H557M278 402H557M278 376H557M278 350H557M278 324H557M278 298H557M278 272H557M278 246H557" class="d-thin" style="opacity:.55"/>
-            <rect x="262" y="540" width="311" height="6" class="d-oak"/>
+            <rect x="262" y="540" width="311" height="6" class="d-walnut"/>
             <rect x="272" y="524" width="291" height="16" class="d-fabric" rx="4"/>
             <rect x="286" y="436" width="88" height="88" class="d-cushion" rx="9"/>
             <rect x="371.6" y="464" width="84" height="60" class="d-cushion" rx="9"/>
@@ -460,13 +454,13 @@ section{padding:64px 0 8px}
   <section aria-labelledby="h-plan">
     <div class="sec-head">
       <h2 id="h-plan">Layout &amp; clearances</h2>
-      <p>The bed end is a regular half-octagon, the inside of the octagonal tower: three equal 144 cm walls. The bed is centred on the window wall, the two angled walls carry fluted panels, the AC-side one with a floating nightstand beside the pillows, and the old concrete shelf becomes a 70 cm-deep oak ledge across the bay. The AC window sits beside the wardrobe, the desk between it and the bay, and the balcony side stays clear as the path from the door. The balcony wall is built out 33 cm, with a rounded end by the wardrobe, and holds a window seat under the balcony window.</p>
+      <p>The bed end is a regular half-octagon, the inside of the octagonal tower: three equal 144 cm walls, lined with plain taupe panels. The bed is centred on the window wall with one floating nightstand on the AC side, and the old concrete shelf carries loft cabinets across the bay. A standing mirror replaces the desk. The balcony wall is built out 33 cm, with a rounded end by the wardrobe, and holds a window seat under the balcony window. A flat false ceiling at 300 cm closes off the hipped roof, with a recessed LED line and the fan.</p>
     </div>
     <div class="split">
       <figure class="sheet" style="margin:0">
         <div class="sheet-bar"><span><b>A-01</b> Floor plan</span><span>1:50 approx · cm</span></div>
         <div class="drawing">
-          <svg viewBox="0 0 620 619" role="img" aria-label="Floor plan, 347 cm wide and 372 cm deep: wardrobe along the entrance wall with the door at its right end, AC window beside the wardrobe, floating desk between it and the bay, queen bed centred on the window wall of a half-octagon bay with three 144 cm walls, one nightstand on the left angled wall, window seat under the balcony window in a 33 cm build-out with a rounded end by the wardrobe.">
+          <svg viewBox="0 0 620 619" role="img" aria-label="Floor plan, 347 cm wide and 372 cm deep: four-door wardrobe along the entrance wall with the door at its right end, AC window beside the wardrobe, a standing mirror between it and the bay, queen bed centred on the window wall of a half-octagon bay with three 144 cm walls, one nightstand on the left angled wall, window seat under the balcony window in a 33 cm build-out with a rounded end by the wardrobe.">
             <path d="M54.2 49.2 546.9 49.2 546.9 430.7 402.6 575 198.5 575 54.2 430.7Z M75 70 526.1 70 526.1 422.1 394 554.2 207.1 554.2 75 422.1Z" class="d-wall" fill-rule="evenodd"/>
             <!-- openings -->
             <rect x="387" y="49" width="117" height="21.5" class="d-room"/>
@@ -486,13 +480,12 @@ section{padding:64px 0 8px}
             <rect x="75" y="187" width="28.6" height="104" class="d-dash"/>
             <path d="M115.3 462.4 207.1 554.2 394 554.2 485.8 462.4Z" class="d-dash"/>
             <text transform="translate(92 239) rotate(-90)" text-anchor="middle" class="d-t">AC over</text>
-            <text x="300.6" y="476.4" text-anchor="middle" class="d-t">ledge over, 70 deep</text>
+            <text x="300.6" y="476.4" text-anchor="middle" class="d-t">loft cabinets over, 70 deep</text>
             <!-- wardrobe + rounded shelves -->
             <rect x="75" y="70" width="253.5" height="75.4" class="d-oak"/>
-            <path d="M80 109H323" class="d-dash"/>
-            <path d="M159.5 70V145M244 70V145" class="d-thin"/>
-            <path d="M75 145.4H161M241.4 145.4H328.5" class="d-line" style="stroke-width:2"/>
-            <path d="M158.2 148.4H245.3" class="d-accent" style="stroke-width:2.4"/>
+            <path d="M138.4 70V145.4M201.8 70V145.4M265.1 70V145.4" class="d-thin"/>
+            <path d="M75 145.4H328.5" class="d-line" style="stroke-width:2"/>
+            <path d="M138.4 145.4A63.4 63.4 0 0 1 75 208.8M138.4 145.4A63.4 63.4 0 0 0 201.8 208.8M265.1 145.4A63.4 63.4 0 0 1 201.8 208.8M265.1 145.4A63.4 63.4 0 0 0 328.5 208.8" class="d-dash"/>
             <path d="M328.5 70H371.4V105.1A42.9 42.9 0 0 1 328.5 148Z" class="d-oak"/>
             <text x="201" y="100" text-anchor="middle" class="d-lab">WARDROBE</text>
             <text x="456" y="100" text-anchor="middle" class="d-t">loft over door</text>
@@ -502,14 +495,11 @@ section{padding:64px 0 8px}
             <text x="450" y="150" text-anchor="middle" class="d-t">door 90</text>
             <circle cx="526" cy="96" r="4" class="d-accentfill"/>
             <text x="553" y="92" class="d-ta">switches</text><text x="553" y="105" class="d-ta">here</text>
-            <!-- fluted walnut: desk wall and both angled walls -->
-            <rect x="75" y="333.9" width="3.9" height="85.8" class="d-walnut"/>
-            <path d="M208 549.6 77.9 422.1" class="d-flute"/>
-            <path d="M393.1 549.6 526 422.1" class="d-flute"/>
-            <!-- desk + stool -->
-            <rect x="75" y="335.2" width="54.6" height="83.2" class="d-oak"/>
-            <text transform="translate(104 376.8) rotate(-90)" text-anchor="middle" class="d-lab">DESK</text>
-            <circle cx="153" cy="376.8" r="26" class="d-soft"/>
+            <!-- taupe panels on both angled walls -->
+            <path d="M208 549.6 77.9 422.1M393.1 549.6 483.3 464.9" class="d-flute" style="stroke:var(--panel); stroke-width:3"/>
+            <!-- standing mirror on castors -->
+            <g transform="translate(114 376.8) rotate(-30)"><rect x="-26" y="-36" width="52" height="72" class="d-dash"/><rect x="-2" y="-36" width="4" height="72" class="d-walnut"/></g>
+            <text x="150" y="330" class="d-t">mirror</text>
             <!-- bed -->
             <rect x="196.6" y="270" width="208" height="257.4" class="d-soft"/>
             <path d="M196.6 290.8H404.6M196.6 337.6H404.6" class="d-thin"/>
@@ -525,8 +515,7 @@ section{padding:64px 0 8px}
             <text x="345.6" y="214.3" class="d-ta">92</text>
             <path d="M404.6 330H483.3M404.6 326V334M483.3 326V334" class="d-accent"/>
             <text x="444" y="323" text-anchor="middle" class="d-ta">61</text>
-            <path d="M129.6 349.5H196.6M129.6 345.5V353.5M196.6 345.5V353.5" class="d-accent"/>
-            <text x="163.1" y="342.5" text-anchor="middle" class="d-ta">52</text>
+
             <!-- overall dims + wall names -->
             <path d="M75 24H526.1M71 28l8-8M522.1 28l8-8M75 18V32M526.1 18V32" class="d-thin"/>
             <text x="300.5" y="18" text-anchor="middle" class="d-tb">347</text>
@@ -542,9 +531,9 @@ section{padding:64px 0 8px}
         </div>
       </figure>
       <dl class="spec">
-        <div><dt>Bed foot to wardrobe<small>Plenty, because the shutters slide. Hinged doors would eat most of this.</small></dt><dd>92 cm</dd></div>
+        <div><dt>Bed foot to wardrobe<small>With a 48 cm shutter wide open, 44 cm stays clear to pass.</small></dt><dd>92 cm</dd></div>
         <div><dt>Bed side to balcony wall<small>The main route from the door to the bed and the window, past the thicker balcony wall.</small></dt><dd>61 cm</dd></div>
-        <div><dt>Desk to bed<small>Room for the pouffe between them.</small></dt><dd>52 cm</dd></div>
+        <div><dt>Standing mirror<small>Full-length, walnut frame, on four castors, so it rolls to the window for daylight.</small></dt><dd>56 × 186</dd></div>
         <div><dt>Door swing<small>Stays clear. The rounded shelf end means no sharp edge where the door opens.</small></dt><dd>90 cm arc</dd></div>
         <div><dt>Bed<small>Low platform in walnut with an upholstered headboard. Hydraulic lift storage is an option.</small></dt><dd>5 × 6½ ft</dd></div>
         <div><dt>Window seat<small>Built into the balcony-wall build-out under the window, with an upholstered cushion and three back cushions. The window starts 30 cm above the seat.</small></dt><dd>147.5 × 38 × 45</dd></div>
@@ -555,16 +544,16 @@ section{padding:64px 0 8px}
 
   <section aria-labelledby="h-mat">
     <div class="sec-head">
-      <h2 id="h-mat">Materials · Option 1</h2>
-      <p>The Oak &amp; Walnut palette in detail: pale oak for bulk so the wardrobe doesn't close in a small room, dark walnut only where you want depth, and bronze glass as the one reflective note. The other two palettes are listed with their renders under Three finishes.</p>
+      <h2 id="h-mat">Materials</h2>
+      <p>One palette for the whole room, taken from the wardrobe reference: warm taupe lacquer for the big surfaces, walnut for frames and accents, black for handles and fittings, and warm white everywhere else.</p>
     </div>
     <div class="swatches">
-      <div class="sw"><div class="chip c-oak"></div><div><h3>Light oak laminate, matt</h3><p>Wardrobe, loft shutters, desk. 1 mm laminate on 18 mm BWP ply, which holds up in monsoon humidity.</p></div></div>
-      <div class="sw"><div class="chip c-walnut"></div><div><h3>Smoked walnut flutes</h3><p>On the two bay facets beside the bed, and behind the desk. Pre-finished panels with a 40 mm pitch.</p></div></div>
-      <div class="sw"><div class="chip c-glass"></div><div><h3>Bronze glass, black frame</h3><p>Centre wardrobe shutter. 5 mm tinted toughened glass in a slim black aluminium profile.</p></div></div>
-      <div class="sw"><div class="chip c-paint"></div><div><h3>Warm greige walls</h3><p>Matt emulsion on the walls, white ceiling. Paint only after the damp repair has dried out.</p></div></div>
-      <div class="sw"><div class="chip c-floor"></div><div><h3>Oak-look SPC floor (optional)</h3><p>Click-lock planks laid over the existing tiles, no demolition. Or keep the tiles and let the rug do the work.</p></div></div>
-      <div class="sw"><div class="chip c-fabric"></div><div><h3>Taupe upholstery, linen sheers</h3><p>Headboard and window-seat fabric plus sheers on ceiling tracks, replacing the mustard and rust curtains. Caramel leather pouffe.</p></div></div>
+      <div class="sw"><div class="chip c-lacq"></div><div><h3>Warm taupe matt lacquer</h3><p>Wardrobe shutters, both lofts, nightstand. PU lacquer on 18 mm BWP ply, which holds up in monsoon humidity.</p></div></div>
+      <div class="sw"><div class="chip c-walnut"></div><div><h3>Walnut veneer</h3><p>Wardrobe surround and fluted band, loft carcasses, open shelves, bed, mirror frame, window-seat top.</p></div></div>
+      <div class="sw"><div class="chip c-panel"></div><div><h3>Taupe laminate panels</h3><p>The two angled bay walls, up to the loft. Flat panels with thin shadow-gap joints, nothing fancier.</p></div></div>
+      <div class="sw"><div class="chip c-black"></div><div><h3>Black metal</h3><p>Long bar handles, curtain tracks, the recessed LED profile and the mirror castors.</p></div></div>
+      <div class="sw"><div class="chip c-paint"></div><div><h3>Warm white walls and ceiling</h3><p>Matt emulsion. Paint only after the damp repair has dried out.</p></div></div>
+      <div class="sw"><div class="chip c-fabric"></div><div><h3>Taupe upholstery, linen sheers</h3><p>Headboard and window-seat fabric, plus sheers on ceiling tracks in place of the mustard and rust curtains.</p></div></div>
     </div>
   </section>
 </div>
@@ -574,10 +563,10 @@ section{padding:64px 0 8px}
 <script src="room3d.js"></script>
 <script>
 (function () {
-  var VIEWS = ["Eye level · wardrobe wall", "Eye level · bed bay", "Window seat", "Bay walls & ceiling", "Isometric · wardrobe wall", "Isometric · bed bay"];
-  var FILES = ["3", "4", "6", "5", "1", "2"];
-  var OPTS = [{"title": "Oak & Walnut", "mood": "Warm modern", "desc": "Pale oak sliding wardrobe with a bronze-glass centre shutter, smoked-walnut flutes on the bay facets and behind the desk, a taupe velvet channel headboard and oak-look planks. The calmer of the two, and the easier to live with. A taupe velvet window seat on the balcony side.", "mats": [["Light oak veneer, matt", "#d9c3a2", "wardrobe · loft · desk"], ["Smoked walnut", "#6b4a33", "flutes · bed · door"], ["Bronze glass, black frame", "#6e5a45", "centre shutter"], ["Taupe velvet", "#8b8074", "headboard"], ["Oak-look SPC planks", "#cdb08a", "floor"], ["Warm greige plaster", "#e3dcd2", "walls"]]}, {"title": "Stone & Brass", "mood": "Soft luxe", "desc": "Greige matt-lacquer wardrobe with a reeded-glass centre shutter and full-height brass pulls, honed beige marble across the bed bay and floor, a tall cream velvet headboard, a glass globe pendant on a brass arm, an arched brass mirror and a marble-topped window seat. The more hotel-like of the two, and the more expensive to build.", "mats": [["Greige matt lacquer", "#cbbfae", "wardrobe · loft"], ["Reeded glass, brass frame", "#e3ddd2", "centre shutter"], ["Honed beige marble", "#dccbb0", "bed bay · floor · desk"], ["Cream velvet", "#e2d7c6", "headboard · bed base"], ["Brushed brass", "#c7a063", "pulls · mirror · lamp arms"], ["Mocha lacquer", "#7a6655", "door · accents"]]}];
-  var tabs = document.querySelector('.opt-tabs'), img = document.getElementById('opt-img'), thumbs = document.getElementById('opt-thumbs');
+  var VIEWS = ["The room", "Cutaway · wardrobe wall", "Cutaway · bed bay", "Wardrobe wall", "Bed bay", "Mirror wall · AC window", "Window seat wall"];
+  var FILES = ["1", "2", "3", "4", "5", "6", "7"];
+  var OPTS = [{"title": "Taupe & Walnut", "mood": "The design", "desc": "Four hinged shutters in warm taupe lacquer with a fluted walnut band and long black bar handles, the rounded open shelves kept at the end. Loft cabinets on both the storage wall and the bay shelf, plain taupe panels on the angled bay walls, a free-standing mirror on castors, the balcony window seat, and a flat false ceiling with a recessed LED line and the fan.", "mats": [["Warm taupe matt lacquer", "#d5cbbf", "shutters · lofts"], ["Walnut veneer", "#5b3d29", "surround · band · shelves"], ["Taupe laminate panels", "#c4b8aa", "angled bay walls"], ["Black metal", "#1d1d1c", "bar handles · LED profile"], ["Warm white", "#eeeae4", "walls · ceiling"], ["Taupe velvet", "#8b8074", "headboard · window seat"]]}];
+  var tabs = document.querySelector('.opt-tabs'); if (tabs) tabs.hidden = true; img = document.getElementById('opt-img'), thumbs = document.getElementById('opt-thumbs');
   var cur = 0, view = 0;
   function src(o, v) { return 'options/opt' + (o + 1) + '-' + FILES[v] + '.webp'; }
   function show() {
@@ -619,3 +608,5 @@ section{padding:64px 0 8px}
   select(0);
 })();
 </script>
+
+</body></html>
